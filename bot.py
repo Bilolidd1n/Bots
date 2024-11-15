@@ -18,22 +18,29 @@ async def start(message: Message):
 async def ugadaniy_chislo(message: Message):
     if random_number == 3:
         await message.reply("Правильно вы отгадали")
+        await message.answer_photo(photo = "https://media.makeameme.org/created/you-win-nothing-b744e1771f.jpg")
     else:
         await message.reply("Неправильно попробуйте снова")
+        await message.answer_photo(photo = "https://media.makeameme.org/created/sorry-you-lose.jpg")
 
 @dp.message(F.text == "2")
 async def ugadaniy_chislo(message: Message):
     if random_number == 2:
         await message.reply("Правильно вы отгадали")
+        await message.answer_photo(photo = "https://media.makeameme.org/created/you-win-nothing-b744e1771f.jpg")
     else:
         await message.reply("Неправильно попробуйте снова")
+        await message.answer_photo(photo = "https://media.makeameme.org/created/sorry-you-lose.jpg")
+        
 
 @dp.message(F.text == "3")
 async def ugadaniy_chislo(message: Message):
     if random_number == 3:
-        await message.reply("Правильно вы отгадали")
+        await message.reply(f"Правильно вы отгадали")
+        await message.answer_photo(photo = "https://media.makeameme.org/created/you-win-nothing-b744e1771f.jpg")
     else:
         await message.reply("Неправильно попробуйте снова")
+        await message.answer_photo(photo = "https://media.makeameme.org/created/sorry-you-lose.jpg")
 
 async def main():
     await dp.start_polling(bot)
